@@ -76,13 +76,13 @@ def MC(iterations,discount,N_zero,alfa):
                     
                     
                     #add to the total value
-                    value_array[c][chosen_action] += (alfa*value)
+                    value_array[c][chosen_action] += value
                     
                     #add to the iteration
                     value_array[c][chosen_action+2] += 1
                     
                     #recalculate average
-                    value_array[c][chosen_action+4] = (value_array[c][chosen_action])/(value_array[c][chosen_action+2])
+                    value_array[c][chosen_action+4] += alfa*(value - value_array[c][chosen_action+4])
                 stop = True
 
     xdata = []
@@ -126,4 +126,4 @@ def MC(iterations,discount,N_zero,alfa):
 
 
 #run that mothafucka
-MC(30000,0.6,100,1)
+MC(30000,0.6,100,0.15)

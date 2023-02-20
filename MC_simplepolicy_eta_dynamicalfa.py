@@ -130,4 +130,4 @@ def MC(iterations,discount,N_zero):
 
 
 #run that mothafucka
-MC(30000,0.6,100)
+MC(300000,0.6,100)
