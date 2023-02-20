@@ -86,7 +86,7 @@ def MC(iterations,discount,N_zero):
                     value_array[c][chosen_action+2] += 1
                     
                     #recalculate average
-                    value_array[c][chosen_action+4] = (value_array[c][chosen_action])/(value_array[c][chosen_action+2])
+                    value_array[c][chosen_action+4] += alfa*(value - value_array[c][chosen_action+4])
                 stop = True
 
     xdata = []
